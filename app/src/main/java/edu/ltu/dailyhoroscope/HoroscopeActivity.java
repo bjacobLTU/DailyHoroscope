@@ -37,7 +37,7 @@ public class HoroscopeActivity extends AppCompatActivity {
                     new String[] {HoroscopeDatabaseHelper.COLUMN_NAME, HoroscopeDatabaseHelper.COLUMN_DESC,
                             HoroscopeDatabaseHelper.COLUMN_SYMB, HoroscopeDatabaseHelper.COLUMN_MONTH},
                     "_id = ?",
-                    new String[] {Integer.toString(horoscopeNo)},
+                    new String[] {Integer.toString(horoscopeNo+1)},
                     null, null,null);
 
             //Move to the first record in the Cursor
@@ -46,6 +46,8 @@ public class HoroscopeActivity extends AppCompatActivity {
                 //Get the horoscope details from the cursor
                 String nameText = cursor.getString(0);
                 String descriptionText = cursor.getString(1);
+                String symbolText = cursor.getString(2);
+                String monthText = cursor.getString(3);
 
                 //Populate the drink name
                 TextView name = (TextView)findViewById(R.id.name);
@@ -57,11 +59,13 @@ public class HoroscopeActivity extends AppCompatActivity {
 
                 //Populate the horoscope symbol
                 TextView symbol = (TextView)findViewById(R.id.symbol);
-                symbol.setText(horoscope.getSymbol());
+                //symbol.setText(horoscope.getSymbol());
+                symbol.setText(symbolText);
 
                 //Populate the horoscope month
                 TextView month = (TextView)findViewById(R.id.month);
-                month.setText(horoscope.getMonth());
+                //month.setText(horoscope.getMonth());
+                month.setText(monthText);
 
                 BottomHoroscopeFragment bottomFragment = (BottomHoroscopeFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
                 bottomFragment.setSummaryText(detailhoroscope.getHoroscope());

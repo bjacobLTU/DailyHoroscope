@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Horoscope</string>
+    <string-array name="options">
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+        <item>Aquarius</item>
+        <item>Pisces</item>
+    </string-array>
+    <string name="title_activity_horoscope">HoroscopeActivity</string>
+</resources>
